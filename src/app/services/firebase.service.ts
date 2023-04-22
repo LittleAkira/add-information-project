@@ -144,7 +144,8 @@ export class FirebaseService {
       effect: information.effect,
       obtain: information.obtain,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
