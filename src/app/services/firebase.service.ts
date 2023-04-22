@@ -85,8 +85,8 @@ export class FirebaseService {
     })
   }
  
-  public async addTool(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addTool(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -106,8 +106,8 @@ export class FirebaseService {
     });
   }
 
-  public async addAsh(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addAsh(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -121,8 +121,8 @@ export class FirebaseService {
     });
   }
 
-  public async addKeyItem(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addKeyItem(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -134,8 +134,8 @@ export class FirebaseService {
     });
   }
 
-  public async addCraftingMaterial(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addCraftingMaterial(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       name: information.name,
@@ -148,8 +148,8 @@ export class FirebaseService {
     });
   }
 
-  public async addBolsteringMaterial(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addBolsteringMaterial(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -161,8 +161,8 @@ export class FirebaseService {
     });
   }
 
-  public async addSorceryAndIncantation(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addSorceryAndIncantation(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -184,8 +184,8 @@ export class FirebaseService {
     });
   }
 
-  public async addWeaponAndShield(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addWeaponAndShield(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -233,8 +233,8 @@ export class FirebaseService {
     });
   }
 
-  public async addAmmo(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addAmmo(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -256,8 +256,8 @@ export class FirebaseService {
     });
   }
 
-  public async addArmor(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addArmor(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -289,8 +289,8 @@ export class FirebaseService {
     });
   }
 
-  public async addAshWar(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addAshWar(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,
@@ -302,8 +302,8 @@ export class FirebaseService {
     });
   }
 
-  public async addTalisman(information: any){
-    return await addDoc(collection(this.database, 'italian'), {
+  public async addTalisman(lang:string, information: any){
+    return await addDoc(collection(this.database, lang), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
       type: information.type,

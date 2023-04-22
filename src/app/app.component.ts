@@ -669,30 +669,30 @@ export class AppComponent implements OnInit{
     })
   }
 
-  public saveInformation(){
+  public saveInformation(lang: string){
     console.log(this.subValue)
     if(this.subValue === 'tool'){
-      this.firebaseService.addTool(this.newInformation.value);
+      this.firebaseService.addTool(lang, this.newInformation.value);
     } else if (this.subValue === 'ash'){
-      this.firebaseService.addAsh(this.newInformation.value);      
+      this.firebaseService.addAsh(lang, this.newInformation.value);      
     } else if (this.subValue === 'key item'){
-      this.firebaseService.addKeyItem(this.newInformation.value)
+      this.firebaseService.addKeyItem(lang, this.newInformation.value)
     } else if (this.subValue === 'crafting material'){
-      this.firebaseService.addCraftingMaterial(this.newInformation.value)
+      this.firebaseService.addCraftingMaterial(lang, this.newInformation.value)
     } else if (this.subValue === 'bolstering material'){
-      this.firebaseService.addBolsteringMaterial(this.newInformation.value)
+      this.firebaseService.addBolsteringMaterial(lang, this.newInformation.value)
     } else if (this.subValue === 'incantation' || this.subValue === 'sorcery'){
-      this.firebaseService.addSorceryAndIncantation(this.newInformation.value)
+      this.firebaseService.addSorceryAndIncantation(lang, this.newInformation.value)
     } else if (this.subValue === 'melee armament' || this.subValue === 'ranged weapon/catalyst' || this.subValue === 'shield'){
-      this.firebaseService.addWeaponAndShield(this.newInformation.value)
+      this.firebaseService.addWeaponAndShield(lang, this.newInformation.value)
     } else if (this.subValue === 'ash war'){
-      this.firebaseService.addAshWar(this.newInformation.value)
+      this.firebaseService.addAshWar(lang, this.newInformation.value)
     } else if (this.subValue === 'arrow/bolt'){
-      this.firebaseService.addAmmo(this.newInformation.value)
+      this.firebaseService.addAmmo(lang, this.newInformation.value)
     } else if (this.subValue === 'armor'){
-      this.firebaseService.addArmor(this.newInformation.value)
+      this.firebaseService.addArmor(lang, this.newInformation.value)
     } else if (this.subValue === 'talisman'){
-      this.firebaseService.addTalisman(this.newInformation.value)
+      this.firebaseService.addTalisman(lang, this.newInformation.value)
     }
   }
 
