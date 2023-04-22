@@ -138,7 +138,6 @@ export class FirebaseService {
     return await addDoc(collection(this.database, 'italian'), {
       main_category: information.mainCategory,
       sub_category: information.subCategory,
-      type: information.type,
       name: information.name,
       desc: information.desc,
       effect: information.effect,
