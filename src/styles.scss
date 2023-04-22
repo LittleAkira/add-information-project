@@ -1,10 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 * {
   scrollbar-width: thin;
   scrollbar-color:  #272e36 #8e8e8f;
 }
+
+/* Works on Chrome, Edge, and Safari */
 
 *::-webkit-scrollbar {
   width: 15px;
@@ -22,3 +23,103 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
 }
+
+app-header {
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+}
+
+// PRIMO CONTAINER DEI CONTROLLI DI ZOOM
+.leaflet-bar {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+// CONTENTITORE DEI BUTTON DI ZOOM IN E ZOOM OUT
+.leaflet-control-zoom {
+  display: flex;
+  gap: 8px;
+}
+
+// BUTTON DI ZOOM IN E ZOOM OUT
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  border-radius: 20px !important;
+}
+
+// CONTENITORE DELLE INFORMAZIONI DI ATTRIBUZIONE DI LEAFLET
+.leaflet-control-attribution{
+  background-color: transparent !important;
+  color: white !important;
+}
+
+// IMMAGINE DELLA BANDIERE DELLE ATTRIBUZIONI
+.leaflet-attribution-flag{
+  display: none !important;
+}
+
+// CONTENITORE PRINCIPALE DEI CLUSTER 
+.marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+  width: 20px !important;
+  height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  background-color: #ff6961 !important;
+}
+
+// PARTE ESTERNA DEL CONTENITORE DEI CLUSTER
+.marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+  background-color: #ff6961a6 !important;
+}
+
+.leaflet-pane, .leaflet-baseMarkers-pane{
+  z-index: 0 !important;
+}
+
+// .leaflet-control-attribution {
+//   border-radius: 20px !important;
+//   margin: 10px !important;
+//   // background: #3A424D !important;
+//   background: #182023 !important;
+//   color: white !important;
+// }
+
+// .leaflet-control-attribution>a {
+//   color: white;
+//   padding-left: 2px !important;
+//   padding-right: 2px !important;
+// }
+
+// .leaflet-control-zoom-out a {
+//   border-radius: 20px !important;
+// }
+
+
+
+// .mat-progress-spinner circle,
+// .mat-spinner circle {
+//   stroke: #EDC951;
+// }
+
+// .mat-expansion-indicator::after{
+//   color: #313131 !important;
+// }
+
+// .mat-form-field-appearance-fill .mat-form-field-flex {
+//   background-color: #84808024;
+// }
+
+  
+//   .mat-form-field-ripple {
+//     background-color: red !important;
+// }
+
+
+// @media only screen and (max-width: 480px) {
+//   .mat-snack-bar-handset {
+//     position: absolute !important;
+//     top: 80px !important;
+//   }
+// }

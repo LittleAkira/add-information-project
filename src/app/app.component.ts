@@ -3,11 +3,10 @@ import { FirebaseService } from './services/firebase.service';
 import { GoogleAuthProvider, browserLocalPersistence, getAuth, setPersistence, signInWithPopup } from 'firebase/auth';
 import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
 

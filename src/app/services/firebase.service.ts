@@ -315,4 +315,5 @@ export class FirebaseService {
       cost_value: information.costValue
     });
   }
+  
 }
