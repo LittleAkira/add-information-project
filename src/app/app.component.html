@@ -1,296 +1,296 @@
 <div class="form-container" [formGroup]="newInformation">
 
-  <div class="category-container">
-      <div>
-          <mat-form-field appearance="fill">
-              <mat-label>Categoria Principale</mat-label>
-              <mat-select formControlName="mainCategory">
-                  <mat-option *ngFor="let main of mainCategories" [value]="main.value"
-                      (click)="mainValue = main.value">
-                      {{main.name}}
-                  </mat-option>
-              </mat-select>
-          </mat-form-field>
-      </div>
+    <div class="category-container">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Categoria Principale</mat-label>
+                <mat-select formControlName="mainCategory">
+                    <mat-option *ngFor="let main of mainCategories" [value]="main.value"
+                        (click)="mainValue = main.value">
+                        {{main.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-      <div>
-          <mat-form-field appearance="fill" *ngIf="mainValue === 'equip'">
-              <mat-label>Sotto Categoria</mat-label>
-              <mat-select formControlName="subCategory">
-                  <mat-option *ngFor="let subEquip of subCategoryEquip" [value]="subEquip.value"
-                      (click)="subValue = subEquip.value">
-                      {{subEquip.name}}
-                  </mat-option>
-              </mat-select>
-          </mat-form-field>
+        <div>
+            <mat-form-field appearance="fill" *ngIf="mainValue === 'equip'">
+                <mat-label>Sotto Categoria</mat-label>
+                <mat-select formControlName="subCategory">
+                    <mat-option *ngFor="let subEquip of subCategoryEquip" [value]="subEquip.value"
+                        (click)="subValue = subEquip.value">
+                        {{subEquip.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-          <mat-form-field appearance="fill" *ngIf="mainValue === 'item'">
-              <mat-label>Sotto Categoria</mat-label>
-              <mat-select formControlName="subCategory">
-                  <mat-option *ngFor="let subItem of subCategoryItem" [value]="subItem.value"
-                      (click)="subValue = subItem.value">
-                      {{subItem.name}}
-                  </mat-option>
-              </mat-select>
-          </mat-form-field>
+            <mat-form-field appearance="fill" *ngIf="mainValue === 'item'">
+                <mat-label>Sotto Categoria</mat-label>
+                <mat-select formControlName="subCategory">
+                    <mat-option *ngFor="let subItem of subCategoryItem" [value]="subItem.value"
+                        (click)="subValue = subItem.value">
+                        {{subItem.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-          <mat-form-field appearance="fill" *ngIf="mainValue === 'general'">
-              <mat-label>Sotto Categoria</mat-label>
-              <mat-select formControlName="subCategory">
-                  <mat-option *ngFor="let subGeneral of subCategoryGeneral" [value]="subGeneral.value"
-                      (click)="subValue = subGeneral.value">
-                      {{subGeneral.name}}
-                  </mat-option>
-              </mat-select>
-          </mat-form-field>
-      </div>
-  </div>
+            <mat-form-field appearance="fill" *ngIf="mainValue === 'general'">
+                <mat-label>Sotto Categoria</mat-label>
+                <mat-select formControlName="subCategory">
+                    <mat-option *ngFor="let subGeneral of subCategoryGeneral" [value]="subGeneral.value"
+                        (click)="subValue = subGeneral.value">
+                        {{subGeneral.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
 
-  <div class="main-information">
+    <div class="main-information">
 
-      <div class="image">
-          <div *ngIf="subValue">
-              <span class="title">Inserire almeno una foto</span>
-              <div class="image-container">
-                  <button class="add" mat-mini-fab (click)="picture.click()">
-                      <input hidden type="file" id="picture" #picture (change)="addImage($event)">
-                      <mat-icon>add_photo_alternate</mat-icon>
-                  </button>
-                  <div class="photo-container">
-                      <div *ngFor="let image of images">
-                          <button mat-mini-fab (click)="deleteImage(image)">
-                              <mat-icon>delete</mat-icon>
-                          </button>
-                          <img src="{{image.url}}">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+        <div class="image">
+            <div *ngIf="subValue">
+                <span class="title">Inserire almeno una foto</span>
+                <div class="image-container">
+                    <button class="add" mat-mini-fab (click)="picture.click()">
+                        <input hidden type="file" id="picture" #picture (change)="addImage($event)">
+                        <mat-icon>add_photo_alternate</mat-icon>
+                    </button>
+                    <div class="photo-container">
+                        <div *ngFor="let image of images">
+                            <button mat-mini-fab (click)="deleteImage(image)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <img src="{{image.url}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="text">
-          <div *ngIf="subValue">
+        <div class="text">
+            <div *ngIf="subValue">
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'melee armament'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let melee of meleeType" [value]="melee.value">
-                          {{melee.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'melee armament'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let melee of meleeType" [value]="melee.value">
+                            {{melee.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'ranged weapon/catalyst'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let range of rangeType" [value]="range.value">
-                          {{range.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'ranged weapon/catalyst'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let range of rangeType" [value]="range.value">
+                            {{range.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'armor'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let armor of armorType" [value]="armor.value">
-                          {{armor.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'armor'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let armor of armorType" [value]="armor.value">
+                            {{armor.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'tool'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let tool of toolType" [value]="tool.value">
-                          {{tool.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'tool'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let tool of toolType" [value]="tool.value">
+                            {{tool.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'arrow/bolt'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let ammo of ammoType" [value]="ammo.value">
-                          {{ammo.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'arrow/bolt'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let ammo of ammoType" [value]="ammo.value">
+                            {{ammo.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-              <mat-form-field appearance="fill" *ngIf="subValue === 'shield'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let shield of shieldType" [value]="shield.value">
-                          {{shield.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
-
-
-              <mat-form-field appearance="fill" *ngIf="subValue === 'ash of war'">
-                  <mat-label>Tipologia</mat-label>
-                  <mat-select formControlName="type">
-                      <mat-option *ngFor="let ashWar of ashWarType" [value]="ashWar.value">
-                          {{ashWar.name}}
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
-
-          </div>
-
-          <div *ngIf="subValue">
-              <mat-form-field class="example-full-width">
-                  <mat-label>Nome</mat-label>
-                  <input matInput type="text" formControlName="name">
-              </mat-form-field>
-          </div>
-
-          <div *ngIf="subValue">
-              <mat-form-field class="example-full-width">
-                  <mat-label>Descrizione</mat-label>
-                  <textarea matInput formControlName="desc"></textarea>
-              </mat-form-field>
-          </div>
+                <mat-form-field appearance="fill" *ngIf="subValue === 'shield'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let shield of shieldType" [value]="shield.value">
+                            {{shield.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
 
+                <mat-form-field appearance="fill" *ngIf="subValue === 'ash of war'">
+                    <mat-label>Tipologia</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let ashWar of ashWarType" [value]="ashWar.value">
+                            {{ashWar.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-          <div *ngIf="subValue">
-              <mat-form-field class="example-full-width">
-                  <mat-label>Effetto</mat-label>
-                  <textarea matInput formControlName="effect"></textarea>
-              </mat-form-field>
-          </div>
-      </div>
+            </div>
 
-  </div>
+            <div *ngIf="subValue">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" formControlName="name">
+                </mat-form-field>
+            </div>
 
-  <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Abilità</mat-label>
-          <input matInput type="text" formControlName="skill">
-      </mat-form-field>
-  </div>
+            <div *ngIf="subValue">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Descrizione</mat-label>
+                    <textarea matInput formControlName="desc"></textarea>
+                </mat-form-field>
+            </div>
 
-  <div *ngIf="subValue === 'crafting material'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Ottenibile</mat-label>
-          <textarea matInput formControlName="obtain"></textarea>
-      </mat-form-field>
-  </div>
 
-  <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'arrow/bolt'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Abilità passiva</mat-label>
-          <textarea matInput formControlName="passive"></textarea>
-      </mat-form-field>
-  </div>
 
-  <div *ngIf="subValue === 'incantation' || subValue === 'sorcery'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Slot occupati</mat-label>
-          <input matInput type="number" formControlName="n_slot">
-      </mat-form-field>
-  </div>
+            <div *ngIf="subValue">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Effetto</mat-label>
+                    <textarea matInput formControlName="effect"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
 
-  <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'arrow/bolt'">
-      <h4>Seleziona tipologia di danno:</h4>
-      <div *ngFor="let damage of damageTypes">
-          <mat-checkbox (change)="onCheckboxChange($event, damage.value)">{{damage.name}}</mat-checkbox>
-      </div>
-  </div>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'armor' || subValue === 'shield' || subValue === 'talisman'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Peso</mat-label>
-          <input matInput type="number" formControlName="weight">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Abilità</mat-label>
+            <input matInput type="text" formControlName="skill">
+        </mat-form-field>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'tool'">
-      <span>Proporzionalità attributi</span>
-      <mat-form-field appearance="fill" *ngFor="let scale of scalingStat">
-          <mat-label>{{scale.name}}</mat-label>
-          <mat-select formControlName="{{scale.value}}">
-              <mat-option *ngFor="let value of scaleValues" [value]="value">
-                  {{value}}
-              </mat-option>
-          </mat-select>
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'crafting material'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Ottenibile</mat-label>
+            <textarea matInput formControlName="obtain"></textarea>
+        </mat-form-field>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
-      <span>Potenza attacco</span>
-      <mat-form-field class="example-full-width" *ngFor="let attack of attStat">
-          <mat-label>{{attack.name}}</mat-label>
-          <input matInput type="number" formControlName="{{attack.value}}">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'arrow/bolt'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Abilità passiva</mat-label>
+            <textarea matInput formControlName="passive"></textarea>
+        </mat-form-field>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
-      <span>Resistanza danni in difesa</span>
-      <mat-form-field class="example-full-width" *ngFor="let guard of guardStat">
-          <mat-label>{{guard.name}}</mat-label>
-          <input matInput type="number" formControlName="{{guard.value}}">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'incantation' || subValue === 'sorcery'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Slot occupati</mat-label>
+            <input matInput type="number" formControlName="n_slot">
+        </mat-form-field>
+    </div>
 
-  <div *ngIf="subValue === 'armor'">
-      <span>Resistenza danni</span>
-      <mat-form-field class="example-full-width" *ngFor="let damageNegation of dmgNegationStat">
-          <mat-label>{{damageNegation.name}}</mat-label>
-          <input matInput type="number" formControlName="{{damageNegation.value}}">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'arrow/bolt'">
+        <h4>Seleziona tipologia di danno:</h4>
+        <div *ngFor="let damage of damageTypes">
+            <mat-checkbox (change)="onCheckboxChange($event, damage.value)">{{damage.name}}</mat-checkbox>
+        </div>
+    </div>
 
-  <div *ngIf="subValue === 'armor'">
-      <span>Resistinza</span>
-      <mat-form-field class="example-full-width" *ngFor="let resistance of resistanceStat">
-          <mat-label>{{resistance.name}}</mat-label>
-          <input matInput type="number" formControlName="{{resistance.value}}">
-      </mat-form-field>
-  </div>
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'armor' || subValue === 'shield' || subValue === 'talisman'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Peso</mat-label>
+            <input matInput type="number" formControlName="weight">
+        </mat-form-field>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
-      <span>Attributi rischiesti</span>
-      <mat-form-field class="example-full-width" *ngFor="let require of requireStat">
-          <mat-label>{{require.name}}</mat-label>
-          <input matInput type="number" formControlName="{{require.value}}">
-      </mat-form-field>
-  </div>
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'tool'">
+        <span>Proporzionalità attributi</span>
+        <mat-form-field appearance="fill" *ngFor="let scale of scalingStat">
+            <mat-label>{{scale.name}}</mat-label>
+            <mat-select formControlName="{{scale.value}}">
+                <mat-option *ngFor="let value of scaleValues" [value]="value">
+                    {{value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 
-  <div *ngIf="subValue === 'ash'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Costo PV</mat-label>
-          <input matInput type="text" formControlName="hpCost">
-      </mat-form-field>
-  </div>
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
+        <span>Potenza attacco</span>
+        <mat-form-field class="example-full-width" *ngFor="let attack of attStat">
+            <mat-label>{{attack.name}}</mat-label>
+            <input matInput type="number" formControlName="{{attack.value}}">
+        </mat-form-field>
+    </div>
 
-  <div
-      *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'ash' || subValue === 'incantation' || subValue === 'sorcery' || subValue === 'tool'">
-      <mat-form-field class="example-full-width">
-          <mat-label>Costo PA</mat-label>
-          <input matInput type="text" formControlName="fpCost">
-      </mat-form-field>
-  </div>
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
+        <span>Resistanza danni in difesa</span>
+        <mat-form-field class="example-full-width" *ngFor="let guard of guardStat">
+            <mat-label>{{guard.name}}</mat-label>
+            <input matInput type="number" formControlName="{{guard.value}}">
+        </mat-form-field>
+    </div>
 
-  <div *ngIf="subValue">
-      <mat-form-field class="example-full-width">
-          <mat-label>Valore di vendita</mat-label>
-          <input matInput type="number" formControlName="sellValue">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'armor'">
+        <span>Resistenza danni</span>
+        <mat-form-field class="example-full-width" *ngFor="let damageNegation of dmgNegationStat">
+            <mat-label>{{damageNegation.name}}</mat-label>
+            <input matInput type="number" formControlName="{{damageNegation.value}}">
+        </mat-form-field>
+    </div>
 
-  <div *ngIf="subValue">
-      <mat-form-field class="example-full-width">
-          <mat-label>Costo (rune)</mat-label>
-          <input matInput type="number" formControlName="costValue">
-      </mat-form-field>
-  </div>
+    <div *ngIf="subValue === 'armor'">
+        <span>Resistinza</span>
+        <mat-form-field class="example-full-width" *ngFor="let resistance of resistanceStat">
+            <mat-label>{{resistance.name}}</mat-label>
+            <input matInput type="number" formControlName="{{resistance.value}}">
+        </mat-form-field>
+    </div>
 
-  <button (click)="saveInformation()">salva</button>
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
+        <span>Attributi rischiesti</span>
+        <mat-form-field class="example-full-width" *ngFor="let require of requireStat">
+            <mat-label>{{require.name}}</mat-label>
+            <input matInput type="number" formControlName="{{require.value}}">
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="subValue === 'ash'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Costo PV</mat-label>
+            <input matInput type="text" formControlName="hpCost">
+        </mat-form-field>
+    </div>
+
+    <div
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'ash' || subValue === 'incantation' || subValue === 'sorcery' || subValue === 'tool'">
+        <mat-form-field class="example-full-width">
+            <mat-label>Costo PA</mat-label>
+            <input matInput type="text" formControlName="fpCost">
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="subValue">
+        <mat-form-field class="example-full-width">
+            <mat-label>Valore di vendita</mat-label>
+            <input matInput type="number" formControlName="sellValue">
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="subValue">
+        <mat-form-field class="example-full-width">
+            <mat-label>Costo (rune)</mat-label>
+            <input matInput type="number" formControlName="costValue">
+        </mat-form-field>
+    </div>
+
+    <button (click)="saveInformation()">salva</button>
 
 </div>
