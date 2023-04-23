@@ -102,7 +102,8 @@ export class FirebaseService {
         arc: information.scalingArc
       },
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -117,7 +118,8 @@ export class FirebaseService {
       fp_cost: information.fpCost,
       hp_cost: information.hpCost,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -130,7 +132,8 @@ export class FirebaseService {
       desc: information.desc,
       effect: information.effect,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -157,7 +160,8 @@ export class FirebaseService {
       desc: information.desc,
       effect: information.effect,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -180,7 +184,8 @@ export class FirebaseService {
         arc: information.reqArc,
       },
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -229,7 +234,8 @@ export class FirebaseService {
       skill: information.skillName,
       wgt: information.weight,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -252,7 +258,8 @@ export class FirebaseService {
       passive: information.passive,
       sell_value: information.sellValue,
       cost_value: information.costValue,
-      craftable: information.craftable
+      craftable: information.craftable,
+      img: information.image
     });
   }
 
@@ -285,7 +292,8 @@ export class FirebaseService {
       },
       wgt: information.weight,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -298,7 +306,8 @@ export class FirebaseService {
       desc: information.desc,
       effect: information.effect,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
 
@@ -312,7 +321,8 @@ export class FirebaseService {
       effect: information.effect,
       wgt: information.weight,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      img: information.image
     });
   }
   
