@@ -276,7 +276,7 @@ export class AppComponent implements OnInit{
       "value": "medium shield"
     },
     {
-      "name": "Granscudo",
+      "name": "Scudo pesante",
       "value": "greatshield"
     },
   ];
