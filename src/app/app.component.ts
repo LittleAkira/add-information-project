@@ -250,15 +250,15 @@ export class AppComponent implements OnInit{
       "value": "arrow"
     },
     {
-      "name": "Riusabile",
+      "name": "Freccia pesante",
       "value": "greatarrow"
     },
     {
-      "name": "Riusabile",
+      "name": "Dardo",
       "value": "bolt"
     },
     {
-      "name": "Riusabile",
+      "name": "Dardo pesante",
       "value": "greatbolt"
     },
   ];
