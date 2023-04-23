@@ -240,7 +240,6 @@ export class FirebaseService {
       type: information.type,
       name: information.name,
       desc: information.desc,
-      effect: information.effect,
       dmg_type: information.dmg_type,
       att_pwr: {
         phy: information.att_phy,
@@ -252,7 +251,8 @@ export class FirebaseService {
       },
       passive: information.passive,
       sell_value: information.sellValue,
-      cost_value: information.costValue
+      cost_value: information.costValue,
+      craftable: information.craftable
     });
   }
 

@@ -333,23 +333,23 @@ export class AppComponent implements OnInit{
 
   public damageTypes = [
     {
-      "name":"",
+      "name":"Taglio",
       "value":"slash"
     },
     {
-      "name":"",
+      "name":"Perforazione",
       "value":"pierce"
     },
     {
-      "name":"",
+      "name":"Standard",
       "value":"standard"
     },
     {
-      "name":"",
+      "name":"Impatto",
       "value":"strike"
     },
     {
-      "name":"",
+      "name":"Nessuno",
       "value":"none"
     }
   ];
@@ -589,7 +589,8 @@ export class AppComponent implements OnInit{
     dmg_negation: new FormControl(null),
     resistance: new FormControl(null),
     n_slot: new FormControl(null),
-    obtain: new FormControl(null)
+    obtain: new FormControl(null),
+    craftable: new FormControl(null)
   });
 
 

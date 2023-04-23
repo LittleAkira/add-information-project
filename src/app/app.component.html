@@ -69,6 +69,18 @@
         </div>
 
         <div class="text">
+
+            <div *ngIf="subValue === 'arrow/bolt'">
+                <mat-form-field appearance="fill">
+                    <mat-label>Categoria Principale</mat-label>
+                    <mat-select formControlName="mainCategory">
+                        <mat-option *ngFor="let main of mainCategories" [value]="main.value"
+                            (click)="mainValue = main.value">
+                            {{main.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
             <div *ngIf="subValue">
 
                 <mat-form-field appearance="fill" *ngIf="subValue === 'melee armament'">
@@ -153,7 +165,7 @@
 
 
 
-            <div *ngIf="subValue">
+            <div *ngIf="subValue !== 'arrow/bolt'">
                 <mat-form-field class="example-full-width">
                     <mat-label>Effetto</mat-label>
                     <textarea matInput formControlName="effect"></textarea>
