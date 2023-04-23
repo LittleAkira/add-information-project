@@ -165,7 +165,7 @@
 
 
 
-            <div *ngIf="subValue !== 'arrow/bolt'">
+            <div *ngIf="subValue && subValue !== 'arrow/bolt'">
                 <mat-form-field class="example-full-width">
                     <mat-label>Effetto</mat-label>
                     <textarea matInput formControlName="effect"></textarea>
