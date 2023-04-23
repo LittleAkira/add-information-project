@@ -71,16 +71,16 @@
         <div class="text">
 
             <div *ngIf="subValue === 'arrow/bolt'">
-                <mat-form-field appearance="fill">
-                    <mat-label>Categoria Principale</mat-label>
-                    <mat-select formControlName="mainCategory">
-                        <mat-option *ngFor="let main of mainCategories" [value]="main.value"
-                            (click)="mainValue = main.value">
-                            {{main.name}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="craftable">
+                    <mat-radio-button class="example-radio-button" [value]="true">
+                        Sì
+                    </mat-radio-button>
+                    <mat-radio-button class="example-radio-button" [value]="false">
+                        No
+                    </mat-radio-button>
+                </mat-radio-group>
             </div>
+
             <div *ngIf="subValue">
 
                 <mat-form-field appearance="fill" *ngIf="subValue === 'melee armament'">
