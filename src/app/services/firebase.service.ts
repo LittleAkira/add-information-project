@@ -59,7 +59,7 @@ export class FirebaseService {
   }
 
   public async uploadPicture(file: File, id: string): Promise<string>{
-    const path = "test/" + id + "/" + file.name;
+    const path = "inventory/" + id + "/" + file.name;
     const metadata = {
       contentType: 'image/jpeg',
     };
@@ -73,7 +73,7 @@ export class FirebaseService {
   }
 
   public deletePicture(id: string, fileName: string): Promise<string>{
-    const path = "test/" + id + "/" + fileName;
+    const path = "inventory/" + id + "/" + fileName;
     return deleteObject(ref(this.storage, path)).then(() => {
       return 'success'
     }).catch(err => {
