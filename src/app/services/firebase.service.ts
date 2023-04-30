@@ -177,8 +177,6 @@ export class FirebaseService {
       hp_cost: information.hpCost,
       slot: information.slot,
       require: {
-        str: information.reqStr,
-        dex: information.reqDex,
         int: information.reqInt,
         fai: information.reqFai,
         arc: information.reqArc,
