@@ -232,7 +232,7 @@
     </div>
 
     <div
-        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'  || subValue === 'arrow/bolt'">
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'arrow/bolt'">
         <span>Potenza attacco</span>
         <mat-form-field class="example-full-width" *ngFor="let attack of attStat">
             <mat-label>{{attack.name}}</mat-label>
@@ -241,7 +241,7 @@
     </div>
 
     <div
-        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield' || subValue === 'incantation' || subValue === 'sorcery'">
+        *ngIf="subValue === 'melee armament' || subValue === 'ranged weapon/catalyst' || subValue === 'shield'">
         <span>Resistanza danni in difesa</span>
         <mat-form-field class="example-full-width" *ngFor="let guard of guardStat">
             <mat-label>{{guard.name}}</mat-label>
