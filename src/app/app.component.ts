@@ -93,6 +93,22 @@ export class AppComponent implements OnInit{
         {
           "name": "Informazione",
           "value": "information"
+        },
+        {
+          "name": "Grazia",
+          "value": "grace"
+        },
+        {
+          "name": "Messaggio",
+          "value": "message"
+        },
+        {
+          "name": "Dipinto",
+          "value": "painting"
+        },
+        {
+          "name": "Tutorial",
+          "value": "tutorial"
         }
   ];
 
@@ -282,51 +298,51 @@ export class AppComponent implements OnInit{
   ];
   public ashWarType = [
     {
-      "name": "Torcia",
+      "name": "Pesante",
       "value": "heavy"
     },
     {
-      "name": "Scudo piccolo",
+      "name": "Incisività",
       "value": "keen"
     },
     {
-      "name": "Scudo medio",
+      "name": "Qualità",
       "value": "quality"
     },
     {
-      "name": "Granscudo",
+      "name": "Magia",
       "value": "magic"
     },
     {
-      "name": "Granscudo",
+      "name": "Fuoco",
       "value": "fire"
     },
     {
-      "name": "Granscudo",
+      "name": "Sacro",
       "value": "sacred"
     },
     {
-      "name": "Granscudo",
+      "name": "Veleno",
       "value": "poison"
     },
     {
-      "name": "Granscudo",
+      "name": "Sangue",
       "value": "blood"
     },
     {
-      "name": "Granscudo",
+      "name": "Fulmine",
       "value": "lightning"
     },
     {
-      "name": "Granscudo",
+      "name": "Freddo",
       "value": "cold"
     },
     {
-      "name": "Granscudo",
+      "name": "Occulto",
       "value": "occult"
     },
     {
-      "name": "Granscudo",
+      "name": "Standard",
       "value": "standard"
     }
   ];
@@ -464,7 +480,7 @@ export class AppComponent implements OnInit{
     },
     {
       "name":"VS taglio",
-      "value":"dmg_ngg_slash"
+      "value":"dmg_neg_slash"
     },
     {
       "name":"VS perforazione",
@@ -590,7 +606,13 @@ export class AppComponent implements OnInit{
     resistance: new FormControl(null),
     n_slot: new FormControl(null),
     obtain: new FormControl(null),
-    craftable: new FormControl(null)
+    craftable: new FormControl(null),
+    multiplayer: new FormControl(null),
+    order: new FormControl(null),
+
+    lat: new FormControl(null),
+    lng: new FormControl(null),
+    id: new FormControl(null)
   });
 
 
@@ -670,30 +692,32 @@ export class AppComponent implements OnInit{
     })
   }
 
-  public saveInformation(lang: string){
+  public saveInformation(){
     console.log(this.subValue)
     if(this.subValue === 'tool'){
-      this.firebaseService.addTool(lang, this.newInformation.value);
+      this.firebaseService.addTool(this.newInformation.value);
     } else if (this.subValue === 'ash'){
-      this.firebaseService.addAsh(lang, this.newInformation.value);      
+      this.firebaseService.addAsh(this.newInformation.value);      
     } else if (this.subValue === 'key item'){
-      this.firebaseService.addKeyItem(lang, this.newInformation.value)
+      this.firebaseService.addKeyItem(this.newInformation.value)
     } else if (this.subValue === 'crafting material'){
-      this.firebaseService.addCraftingMaterial(lang, this.newInformation.value)
+      this.firebaseService.addCraftingMaterial(this.newInformation.value)
     } else if (this.subValue === 'bolstering material'){
-      this.firebaseService.addBolsteringMaterial(lang, this.newInformation.value)
+      this.firebaseService.addBolsteringMaterial(this.newInformation.value)
     } else if (this.subValue === 'incantation' || this.subValue === 'sorcery'){
-      this.firebaseService.addSorceryAndIncantation(lang, this.newInformation.value)
+      this.firebaseService.addSorceryAndIncantation(this.newInformation.value)
     } else if (this.subValue === 'melee armament' || this.subValue === 'ranged weapon/catalyst' || this.subValue === 'shield'){
-      this.firebaseService.addWeaponAndShield(lang, this.newInformation.value)
-    } else if (this.subValue === 'ash war'){
-      this.firebaseService.addAshWar(lang, this.newInformation.value)
+      this.firebaseService.addWeaponAndShield(this.newInformation.value)
+    } else if (this.subValue === 'ash of war'){
+      this.firebaseService.addAshWar(this.newInformation.value)
     } else if (this.subValue === 'arrow/bolt'){
-      this.firebaseService.addAmmo(lang, this.newInformation.value)
+      this.firebaseService.addAmmo(this.newInformation.value)
     } else if (this.subValue === 'armor'){
-      this.firebaseService.addArmor(lang, this.newInformation.value)
+      this.firebaseService.addArmor(this.newInformation.value)
     } else if (this.subValue === 'talisman'){
-      this.firebaseService.addTalisman(lang, this.newInformation.value)
+      this.firebaseService.addTalisman(this.newInformation.value)
+    } else if (this.subValue === 'grace'){
+      this.firebaseService.addGrace(this.newInformation.value)
     }
   }
 
